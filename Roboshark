@@ -7,7 +7,7 @@ import robocode.*;
 /**
  * Baby_shark - a robot by (your name here)
  */
-public class Babyshark extends Robot
+public class Babyshark extends AdvancedRobot
 {
 	/**
 	 * run: Baby_shark's default behavior
@@ -23,15 +23,17 @@ public class Babyshark extends Robot
 		// Robot main loop
 		while(true) {
 			// Replace the next 4 lines with any behavior you would like
-			ahead(70);
-			turnGunRight(180);
-			turnRight (180);
-			back(50);
-			turnGunRight(90);
-			ahead(200);
-			turnGunRight(70);
-			back(30);
-			ahead(400);
+			setAhead(100);
+			setTurnLeft(90);
+			setAhead(100);
+			setTurnRight(90);
+			setTurnGunRight(10);
+			execute();
+
+		//turnLeft(100);
+		//turnGunRight(100);
+		//turnLeft(100);
+
 		}
 	}
 
@@ -40,9 +42,11 @@ public class Babyshark extends Robot
 	 */
 	public void onScannedRobot(ScannedRobotEvent e) {
 		// Replace the next line with any behavior you would like
-		fire(10);
-		turnLeft(40);
-		fire(3);
+			fire(1000);
+			fire(1);
+			fire(100);
+			
+	
 	}
 
 	/**
@@ -50,10 +54,10 @@ public class Babyshark extends Robot
 	 */
 	public void onHitByBullet(HitByBulletEvent e) {
 		// Replace the next line with any behavior you would like
-		back(15);
-		fire(4);
-		turnLeft(90);
-		ahead(100);
+			setTurnLeft(100);
+			setAhead(150);
+			setBack(100);
+			execute();
 	}
 	
 	/**
@@ -61,10 +65,8 @@ public class Babyshark extends Robot
 	 */
 	public void onHitWall(HitWallEvent e) {
 		// Replace the next line with any behavior you would like
-		back(20);
-		turnLeft(90);
-		ahead(100);
-		turnGunRight(90);
-		
+		setTurnRight(60);
+		setBack(20);
+		execute();
 	}	
 }
