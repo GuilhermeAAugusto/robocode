@@ -27,8 +27,8 @@ public class Babyshark extends AdvancedRobot
 			setAhead(100);
 			//setTurnLeft(1);
 			//setTurnRight(1);
-			setTurnGunRight(30);
-			setTurnGunLeft(60);
+					setTurnGunRight(-10);
+					setTurnGunLeft(+10);
 			//setTurnGunRight(180);
 			execute();
 
@@ -46,7 +46,7 @@ public class Babyshark extends AdvancedRobot
 		//	setTurnLeft(60);
 			setBack(30);
 		//	setTurnLeft(60);
-			fire(100);
+			fire(10);
 			execute();
 	
 	}
@@ -57,7 +57,7 @@ public class Babyshark extends AdvancedRobot
 	public void onHitByBullet(HitByBulletEvent e) {
 		// Replace the next line with any behavior you would like
 			setTurnLeft(90);
-			setTurnGunLeft(90);
+			setTurnGunLeft(360);
 			//setTurnRight(80);
 			//setBack(100);
 			//setFire(+10);
